@@ -1,0 +1,7 @@
+#IDE PROJECT FILES#
+.idea/
+
+
+#Generated Dependencies#
+bower_components/
+node_modules/

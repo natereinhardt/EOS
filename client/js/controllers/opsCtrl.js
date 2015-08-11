@@ -1,13 +1,20 @@
 app.controller('opsCtrl', ['$scope', '$resource' , function ($scope, $resource){
-        $scope.ops = [
-            {name : "First Op"},
-            {name : "Second Op"}
-        ];
+
+       var Op = $resource("/api/ops");
+        Op.query(function (results){
+           $scope.ops = results;
+        });
+
+        $scope.ops = [];
 
         console.log($scope.ops.length);
         $scope.createOp = function (){
-            $scope.ops.push({name: $scope.opName});
-            $scope.opName = '';
+           var op = new Op();
+            op.name = $scope.opName;
+            op.$save(function (result){
+                $scope.ops.push(result);
+                $scope.opName = '';
+            });
         }
     }]);
 

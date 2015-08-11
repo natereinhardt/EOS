@@ -15,6 +15,7 @@
     "angular-resource": "~1.4.3",
     "angularjs": "~1.4.3",
     "bootstrap": "~3.3.5",
-    "angular": "~1.4.3"
+    "angular": "~1.4.3",
+    "font-awesome": "~4.4.0"
   }
 }

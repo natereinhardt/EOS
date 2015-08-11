@@ -1,20 +1,20 @@
-app.controller('opsCtrl', ['$scope', '$resource' , function ($scope, $resource){
+app.controller('opsCtrl', ['$scope', '$resource', function ($scope, $resource) {
 
-       var Op = $resource("/api/ops");
-        Op.query(function (results){
-           $scope.ops = results;
+    var Op = $resource("/api/ops");
+    Op.query(function (results) {
+        $scope.ops = results;
+    });
+
+    $scope.ops = [];
+
+    console.log($scope.ops.length);
+    $scope.createOp = function () {
+        var op = new Op();
+        op.name = $scope.opName;
+        op.$save(function (result) {
+            $scope.ops.push(result);
+            $scope.opName = '';
         });
-
-        $scope.ops = [];
-
-        console.log($scope.ops.length);
-        $scope.createOp = function (){
-           var op = new Op();
-            op.name = $scope.opName;
-            op.$save(function (result){
-                $scope.ops.push(result);
-                $scope.opName = '';
-            });
-        }
-    }]);
+    }
+}]);
 

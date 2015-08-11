@@ -7,8 +7,8 @@ module.exports.create = function (req, res) {
     });
 };
 module.exports.list = function (req, res) {
-    Op.find({}, function (err, results){
+    Op.find({}, function (err, results) {
         res.json(results);
-        });
+    });
 };
 

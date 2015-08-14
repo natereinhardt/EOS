@@ -1,0 +1,13 @@
+<div ng-controller="opsCtrl">
+    <h1>There are {{ops.length}} operations going on</h1>
+    <ul>
+        <li ng-repeat="op in ops">
+            {{op.name}}
+        </li>
+    </ul>
+    <form ng-submit="createOp()">
+        <input type="text" placeholder="Op name" ng-model="opName">
+        <button type="submit">Add</button>
+
+    </form>
+</div>

@@ -1,20 +1,27 @@
-app.controller('opsCtrl', ['$scope', '$resource', function ($scope, $resource) {
+(function (angular) {
+    'use strict';
 
-    var Op = $resource("/api/ops");
-    Op.query(function (results) {
-        $scope.ops = results;
-    });
+    var ngModule = angular.module('eos.opsCtrl', []);
 
-    $scope.ops = [];
+    ngModule.controller('opsCtrl',
+        function opsCtrl($scope, $resource) {
+            var Op = $resource("/api/ops");
+            Op.query(function (results) {
+                $scope.ops = results;
+            });
 
-    console.log($scope.ops.length);
-    $scope.createOp = function () {
-        var op = new Op();
-        op.name = $scope.opName;
-        op.$save(function (result) {
-            $scope.ops.push(result);
-            $scope.opName = '';
-        });
-    }
-}]);
+            $scope.ops = [];
+
+            console.log($scope.ops.length);
+            $scope.createOp = function () {
+                var op = new Op();
+                op.name = $scope.opName;
+                op.$save(function (result) {
+                    $scope.ops.push(result);
+                    $scope.opName = '';
+                });
+            }
+        }
+    );
+}(window.angular));
 

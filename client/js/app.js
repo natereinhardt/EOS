@@ -1,8 +1,12 @@
 (function (angular) {
     'use strict';
     var app = angular.module('eos', [
+        'ngAnimate',
+        'ngAria',
+        'ngMaterial',
         'ngRoute',
         'ngResource',
+        'eos.sideNavCtrl',
         'eos.opsCtrl',
         'eos.dashboardCtrl'
         ]);

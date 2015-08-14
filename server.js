@@ -30,10 +30,3 @@ app.listen(3000);
 console.log('Im Listening...');
 exports = module.exports = app;
 
-
-//app.get('/', function (req, res) {
-//    res.sendFile(__dirname + '/client/views/index.html');
-//});
-//app.get('*', function (req, res) {
-//    res.sendFile(__dirname + '/client/views/index.html');
-//});

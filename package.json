@@ -2,10 +2,14 @@
   "name": "eos",
   "version": "0.0.1",
   "dependencies": {
+    "angular": "^1.4.4",
+    "angular-animate": "^1.4.4",
+    "angular-aria": "^1.4.4",
+    "angular-material": "^0.10.1",
     "angular-route": "^1.4.4",
     "body-parser": "^1.13.3",
     "express": "^4.13.3",
-    "mongoose": "^4.1.2",
-    "method-override" : "~2.0.2"
+    "method-override": "~2.0.2",
+    "mongoose": "^4.1.2"
   }
 }

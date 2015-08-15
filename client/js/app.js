@@ -1,8 +1,10 @@
 (function (angular) {
     'use strict';
     var app = angular.module('eos', [
+        'ngMaterial',
         'ngRoute',
         'ngResource',
+        'eos.topNavCtrl',
         'eos.opsCtrl',
         'eos.dashboardCtrl'
         ]);
@@ -24,6 +26,12 @@
         $locationProvider.html5Mode(true);
 
     }]);
+
+   app.config(function($mdThemingProvider) {
+        $mdThemingProvider.theme('default')
+            .primaryPalette('blue-grey')
+            .accentPalette('orange');
+    });
 
 }(window.angular));
 

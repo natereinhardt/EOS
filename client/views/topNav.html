@@ -1,0 +1,39 @@
+<div ng-controller="topNavCtrl">
+    <md-content>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <md-button ng-click="toggleRight()" class="md-icon-button" aria-label="Menu">
+                    <i class="material-icons">menu</i>
+                </md-button>
+                <span flex>EOS: Eve Operations Suite</span>
+                <md-button class="md-icon-button" aria-label="Favorite">
+                    <i class="material-icons">favorite</i>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Settings">
+                    <i class="material-icons">settings</i>
+                </md-button>
+            </div>
+        </md-toolbar>
+    </md-content>
+    <section layout="row" flex>
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="right">
+            <md-toolbar class="md-theme-light">
+                <h1 class="md-toolbar-tools">Navigation</h1>
+            </md-toolbar>
+            <md-content layout-padding>
+                <form>
+                    <md-input-container>
+                        <label for="testInput">Test input</label>
+                        <input type="text" id="testInput"
+                               ng-model="data" md-sidenav-focus>
+                    </md-input-container>
+                </form>
+                <md-button style="width: 95%" ng-click=close() href="/ops" class="md-button md-raised md-primary ">Operations</md-button>
+                <md-button style="width: 95%" ng-click=close() href="/"  class="md-raised md-primary urlButton">Back To Dashboard</md-button>
+                <md-button style="width: 95%" ng-click="close()" class="md-primary">
+                    Close Navigation
+                </md-button>
+            </md-content>
+        </md-sidenav>
+    </section>
+</div>

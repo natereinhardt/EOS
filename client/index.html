@@ -9,52 +9,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
+
+
+<!--Bower Dependencies-->
+
+
 <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
-<script type="text/javascript" src="/node_modules/angular-route/angular-route.js"></script>
-<script type="text/javascript" src="/node_modules/angular-material/angular-material.js"></script>
-
-<script type="text/javascript" src="/node_modules/angular-animate/angular-animate.js"></script>
-
-<script type="text/javascript" src="/node_modules/angular-aria/angular-aria.js"></script>
-
-
 <script type="text/javascript" src="/bower_components/angular-resource/angular-resource.js"></script>
+<script type="text/javascript" src="/bower_components/angular-animate/angular-animate.js"></script>
+<script type="text/javascript" src="/bower_components/angular-aria/angular-aria.js"></script>
+<script type="text/javascript" src="/bower_components/angular-material/angular-material.js"></script>
+
+
+<!--CSS-->
+<link rel="stylesheet" type="text/css" href="/bower_components/angular-material/angular-material.css">
+<link rel="stylesheet" type="text/css" href="/bower_components/font-awesome/css/font-awesome.css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/client/css/topNav.css">
+
+<!--NPM Dependencies-->
+<script type="text/javascript" src="/node_modules/angular-route/angular-route.js"></script>
 
 
 <script type="text/javascript" src="/js/app.js"></script>
 <script type="text/javascript" src="/js/controllers/opsCtrl.js"></script>
 <script type="text/javascript" src="/js/controllers/dashboardCtrl.js"></script>
-<script type="text/javascript" src="/js/controllers/sideNavCtrl.js"></script>
+<script type="text/javascript" src="/js/controllers/topNavCtrl.js"></script>
 <body>
 
-<div><a href="/ops">To OPS</a></div>
-<div><a href="/">Back Home</a></div>
 
-<div>
-<md-toolbar layout="row">
-    <div class="md-toolbar-tools">
-        <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
-            <md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
-        </md-button>
-        <h1>Hello World</h1>
-    </div>
-</md-toolbar>
-
-
-<div layout="row" flex>
-    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
-
-    </md-sidenav>
-    <div layout="column" flex id="content">
-        <md-content layout="column" flex class="md-padding">
-
-        </md-content>
-    </div>
-</div>
-</div>
-<!--OPERATIONS VIEW-->
 <div id="wrapper">
-    <div ng-view > </div>
+    <div ng-include src="'views/topNav.html'"></div>
+
+    <!--CONTENT VIEW-->
+    <div ng-view></div>
+
+
 </div>
 
 

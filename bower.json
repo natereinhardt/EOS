@@ -11,11 +11,15 @@
     "tests"
   ],
   "dependencies": {
-    "angular-bootstrap": "~0.13.3",
-    "angular-resource": "~1.4.3",
-    "angularjs": "~1.4.3",
+    "angular-bootstrap": "0.13.x",
+    "angular-resource": "1.4.x",
     "bootstrap": "~3.3.5",
-    "angular": "~1.4.3",
-    "font-awesome": "~4.4.0"
+    "angular": "1.4.x",
+    "font-awesome": "~4.4.0",
+    "angular-material": "~0.10.1",
+    "material-design-icons": "~2.0.0"
+  },
+  "resolutions": {
+    "angular": "1.4.x"
   }
 }

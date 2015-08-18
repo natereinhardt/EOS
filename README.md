@@ -18,11 +18,11 @@ Im starting this project from scratch with no generators to hopefully grasp a be
 ###TO RUN###
 Travel to the base directory of this project where you saved it.
 
-run 'grunt dev' in one console
-run 'mondod'  in a new console to start up your mongo database
-finally: run 'node server' in a new console to start up the application
+- run 'grunt dev' in one console
+- run 'mondod'  in a new console to start up your mongo database
+-finally: run 'node server' in a new console to start up the application
 
-travel to localhost:8080 in your browers and BAM! it should be all up and running. :metal:
+Now travel to localhost:8080 in your browers and BAM!:metal: It should be all up and running. :+1: 
 
 
 

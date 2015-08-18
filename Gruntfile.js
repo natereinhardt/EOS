@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     'use strict';
 
     var BOWER_DIR = "bower_components",
-        CLIENT_DIR ="client",
+        CLIENT_DIR ="client/js",
 
     EXTERNAL_JS_FILES = [
         BOWER_DIR + "/angular/angular.js",
@@ -16,7 +16,9 @@ module.exports = function(grunt) {
         BOWER_DIR + "/angular-material/angular-material.js"
     ],
     INTERNAL_JS_FILES = [
-            CLIENT_DIR + "/js/**/*.js"
+            CLIENT_DIR + "/app.js",
+            CLIENT_DIR + "/controllers/*.js"
+
 
     ];
 
@@ -43,9 +45,18 @@ module.exports = function(grunt) {
                 src: INTERNAL_JS_FILES,
                 dest: 'client/js/internal.js'
             }
+        },
+        watch: {
+            dev: {
+                files: ['Gruntfile.js', INTERNAL_JS_FILES],
+                tasks: ['jshint', 'concat'],
+                options: {
+                    atBegin: true
+                }
+            }
         }
     });
-    //grunt.registerTask('dev', ['concat']);
+    grunt.registerTask('dev', ['watch']);
 
     // ===========================================================================
     // LOAD GRUNT PLUGINS ========================================================

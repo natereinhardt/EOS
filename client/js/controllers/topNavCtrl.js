@@ -26,5 +26,5 @@
                     $log.debug("close RIGHT is done");
                 });
         };
-    })
+    });
 }(window.angular));

@@ -20,7 +20,7 @@
                     $scope.ops.push(result);
                     $scope.opName = '';
                 });
-            }
+            };
         }
     );
 }(window.angular));

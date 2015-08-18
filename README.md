@@ -14,3 +14,15 @@ Im starting this project from scratch with no generators to hopefully grasp a be
 - Express
 - Nodejs
 - MongoDb
+
+###TO RUN###
+Travel to the base directory of this project where you saved it.
+
+- 1: run 'grunt dev' in one console
+- 2: run 'mondod'  in a new console to start up your mongo database
+- Finally: run 'node server' in a new console to start up the application
+
+Now travel to localhost:8080 in your browers and BAM!:metal: It should be all up and running. :+1: 
+
+
+

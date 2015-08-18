@@ -17,7 +17,8 @@
     "angular": "1.4.x",
     "font-awesome": "~4.4.0",
     "angular-material": "~0.10.1",
-    "material-design-icons": "~2.0.0"
+    "material-design-icons": "~2.0.0",
+    "angular-route": "~1.4.4"
   },
   "resolutions": {
     "angular": "1.4.x"

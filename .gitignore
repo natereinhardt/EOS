@@ -8,3 +8,4 @@ node_modules/
 
 #Concat Files#
 client/js/internal.js
+client/js/third-party.js

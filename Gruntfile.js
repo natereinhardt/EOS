@@ -13,13 +13,12 @@ module.exports = function(grunt) {
         BOWER_DIR + "/angular-resource/angular-resource.js",
         BOWER_DIR + "/angular-animate/angular-animate.js",
         BOWER_DIR + "/angular-aria/angular-aria.js",
-        BOWER_DIR + "/angular-material/angular-material.js"
+        BOWER_DIR + "/angular-material/angular-material.js",
+        BOWER_DIR + "/angular-route/angular-route.js"
     ],
     INTERNAL_JS_FILES = [
             CLIENT_DIR + "/app.js",
             CLIENT_DIR + "/controllers/*.js"
-
-
     ];
 
     // ===========================================================================
@@ -38,12 +37,16 @@ module.exports = function(grunt) {
             },
 
             // when this task is run, lint the Gruntfile and all js files in src
-            build: ['Gruntfile.js', 'client/**/*.js']
+            build: ['Gruntfile.js', INTERNAL_JS_FILES]
         },
         concat: {
             internal: {
                 src: INTERNAL_JS_FILES,
                 dest: 'client/js/internal.js'
+            },
+            external: {
+                src: EXTERNAL_JS_FILES,
+                dest: 'client/js/third-party.js'
             }
         },
         watch: {
@@ -56,8 +59,8 @@ module.exports = function(grunt) {
             }
         }
     });
-    grunt.registerTask('dev', ['watch']);
 
+    grunt.registerTask('dev', ['watch']);
     // ===========================================================================
     // LOAD GRUNT PLUGINS ========================================================
     // ===========================================================================

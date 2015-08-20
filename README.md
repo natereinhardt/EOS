@@ -16,6 +16,9 @@ Im starting this project from scratch with no generators to hopefully grasp a be
 - MongoDb
 
 ###TO RUN###
+
+*Assuming you have node and mongo installed*
+
 Travel to the base directory of this project where you saved it.
 
 - 1: run 'grunt dev' in one console

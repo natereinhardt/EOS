@@ -1,6 +1,6 @@
 #IDE PROJECT FILES#
 .idea/
-
+EOS.iml
 
 #Generated Dependencies#
 bower_components/
@@ -8,4 +8,5 @@ node_modules/
 
 #Concat Files#
 client/js/internal.js
+/npm-debug.log
 client/js/third-party.js

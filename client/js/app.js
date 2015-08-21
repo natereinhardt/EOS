@@ -17,6 +17,16 @@
                controller: 'dashboardCtrl'
            });
         $routeProvider.when(
+            '/login', {
+                templateUrl: 'views/login.html',
+                pageName: 'Login'
+            });
+        $routeProvider.when(
+            '/signup', {
+                templateUrl: 'views/signUp.html',
+                pageName: 'SignUp'
+            });
+        $routeProvider.when(
            '/ops', {
                 templateUrl: 'views/ops.html',
                 pageName: 'Operations',
@@ -29,7 +39,7 @@
 
    app.config(function($mdThemingProvider) {
         $mdThemingProvider.theme('default')
-            .primaryPalette('blue-grey')
+            .primaryPalette('deep-orange')
             .accentPalette('orange');
     });
 

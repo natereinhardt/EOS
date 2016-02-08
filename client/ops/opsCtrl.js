@@ -25,7 +25,7 @@
         }
 
         function listOps(){
-            return $http.get('/api/ops').then( function (response) {
+            return $http.get('/api/ops').then(function (response) {
                 vm.ops = response.data;
             });
         }

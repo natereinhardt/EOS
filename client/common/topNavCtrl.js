@@ -3,7 +3,7 @@
     var ngModule = angular.module('eos.topNavCtrl', ['ngMaterial']);
 
 
-    ngModule.controller('topNavCtrl', function ($scope, $timeout, $mdSidenav, $mdUtil, $log) {
+    ngModule.controller('topNavCtrl', function ($scope, $timeout, $mdSidenav, $mdUtil) {
         $scope.toggleRight = buildToggler('right');
         /**
          * Build handler to open/close a SideNav; when animation finishes
@@ -14,7 +14,6 @@
                 $mdSidenav(navID)
                     .toggle()
                     .then(function () {
-                        $log.debug("toggle " + navID + " is done");
                     });
             }, 200);
             return debounceFn;
@@ -23,7 +22,6 @@
         $scope.close = function () {
             $mdSidenav('right').close()
                 .then(function () {
-                    $log.debug("close RIGHT is done");
                 });
         };
     });

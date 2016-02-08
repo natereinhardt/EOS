@@ -1,7 +1,11 @@
 var Op = require('./op');
 
 module.exports.create = function (req, res) {
-    var op = new Op(req.body);
+
+    var opName = req.params.opName;
+    var op = new Op();
+    op.name = opName;
+
     op.save(function (err, result) {
         res.json(result);
     });

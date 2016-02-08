@@ -1,4 +1,4 @@
-var opsController = require('./controllers/opsController');
+var opsController = require('./ops/opsController');
 
 module.exports = function(app) {
 //path.join(__dirname, 'client');

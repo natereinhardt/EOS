@@ -1,4 +1,4 @@
-var Op = require('../models/op');
+var Op = require('./op');
 
 module.exports.create = function (req, res) {
     var op = new Op(req.body);

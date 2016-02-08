@@ -3,25 +3,33 @@
 
     var ngModule = angular.module('eos.opsCtrl', []);
 
-    ngModule.controller('opsCtrl',
-        function opsCtrl($scope, $resource) {
-            var Op = $resource("/api/ops");
-            Op.query(function (results) {
-                $scope.ops = results;
-            });
+    ngModule.controller('opsCtrl', function ($http) {
 
-            $scope.ops = [];
+        var vm = this;
+        vm.ops = [];
 
-            console.log($scope.ops.length);
-            $scope.createOp = function () {
-                var op = new Op();
-                op.name = $scope.opName;
-                op.$save(function (result) {
-                    $scope.ops.push(result);
-                    $scope.opName = '';
-                });
-            };
+        vm.createOp = createOp;
+        vm.listOps = listOps;
+
+        init();
+
+        function init(){
+            listOps();
         }
-    );
+
+        function createOp(opName) {
+            return $http.post('/api/ops/' + encodeURIComponent(opName)).then(function (response){
+                vm.ops.push(response.data);
+                vm.opName = '';
+            });
+        }
+
+        function listOps(){
+            return $http.get('/api/ops').then(function (response) {
+                vm.ops = response.data;
+            });
+        }
+
+    });
 }(window.angular));
 

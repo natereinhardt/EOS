@@ -7,7 +7,7 @@ module.exports = function(app) {
     // authentication routes
 
     app.get('/api/ops', opsController.list);
-    app.post('/api/ops', opsController.create);
+    app.post('/api/ops/:opName', opsController.create);
 
 
     // frontend routes =========================================================

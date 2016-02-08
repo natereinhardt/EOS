@@ -1,13 +1,18 @@
-<div ng-controller="opsCtrl">
-    <h1>There are {{ops.length}} operations going on</h1>
+<div ng-controller="opsCtrl as vm">
+    <h1>There are {{vm.ops.length}} operations going on</h1>
     <ul>
-        <li ng-repeat="op in ops">
+        <li ng-repeat="op in vm.ops">
             {{op.name}}
         </li>
     </ul>
-    <form ng-submit="createOp()">
-        <input type="text" placeholder="Op name" ng-model="opName">
-        <button type="submit">Add</button>
-
+    <form name="addOpp">
+        <div class="form-group">
+            <label class="control-label" for="opName">Operation:</label>
+            <input  type="text"
+                    ng-model="vm.opName" required
+                    id="opName"
+                    class="form-control"/>
+        </div>
+        <button ng-click ="vm.createOp(vm.opName)" class="btn btn-primary">Add Operation</button>
     </form>
 </div>

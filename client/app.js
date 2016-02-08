@@ -12,15 +12,13 @@
     app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider){
         $routeProvider.when(
            '/', {
-               templateUrl: 'views/dashboard.html',
-               pageName: 'Dashboard',
-               controller: 'dashboardCtrl'
+               templateUrl: 'dashboard/dashboard.html',
+               pageName: 'Dashboard'
            });
         $routeProvider.when(
            '/ops', {
-                templateUrl: 'views/ops.html',
-                pageName: 'Operations',
-                controller: 'opsCtrl'
+                templateUrl: 'ops/ops.html',
+                pageName: 'Operations'
             });
         $routeProvider.otherwise({redirectTo: '/'});
         $locationProvider.html5Mode(true);

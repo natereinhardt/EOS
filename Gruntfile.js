@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     'use strict';
 
     var BOWER_DIR = "bower_components",
-        CLIENT_DIR ="client/js",
+        CLIENT_DIR ="client",
 
     EXTERNAL_JS_FILES = [
         BOWER_DIR + "/angular/angular.js",
@@ -17,8 +17,11 @@ module.exports = function(grunt) {
         BOWER_DIR + "/angular-route/angular-route.js"
     ],
     INTERNAL_JS_FILES = [
-            CLIENT_DIR + "/app.js",
-            CLIENT_DIR + "/controllers/*.js"
+        CLIENT_DIR + "/app.js",
+        CLIENT_DIR + "/common/*.js",
+        CLIENT_DIR + "/dashboard/*.js",
+        CLIENT_DIR + "/ops/*.js"
+
     ];
 
     // ===========================================================================
@@ -42,11 +45,11 @@ module.exports = function(grunt) {
         concat: {
             internal: {
                 src: INTERNAL_JS_FILES,
-                dest: 'client/js/internal.js'
+                dest: 'client/internal.js'
             },
             external: {
                 src: EXTERNAL_JS_FILES,
-                dest: 'client/js/third-party.js'
+                dest: 'client/third-party.js'
             }
         },
         watch: {

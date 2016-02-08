@@ -7,6 +7,6 @@ bower_components/
 node_modules/
 
 #Concat Files#
-client/js/internal.js
+client/internal.js
 /npm-debug.log
-client/js/third-party.js
+client/third-party.js

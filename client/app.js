@@ -6,7 +6,8 @@
         'ngResource',
         'eos.topNavCtrl',
         'eos.opsCtrl',
-        'eos.dashboardCtrl'
+        'eos.dashboardCtrl',
+        'eos.priceAdmin'
         ]);
 
     app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider){
@@ -19,6 +20,11 @@
            '/ops', {
                 templateUrl: 'ops/ops.html',
                 pageName: 'Operations'
+            });
+        $routeProvider.when(
+            '/priceAdmin', {
+                templateUrl: 'priceAdmin/priceAdmin.html',
+                pageName: 'Payout Price Admin Panel'
             });
         $routeProvider.otherwise({redirectTo: '/'});
         $locationProvider.html5Mode(true);

@@ -1,4 +1,4 @@
-var opsController = require('./ops/opsController');
+var opsCtrl = require('./ops/opsCtrl');
 var eveCrest = require('./crest/eveCrest');
 
 module.exports = function(app) {
@@ -6,8 +6,8 @@ module.exports = function(app) {
     // handle things like api calls
     // authentication routes
 
-    app.get('/api/ops', opsController.list);
-    app.post('/api/ops/:opName', opsController.create);
+    app.get('/api/ops', opsCtrl.list);
+    app.post('/api/ops/:opName', opsCtrl.create);
 
     app.route('/api/crest/priceData').get(eveCrest.getSearchResults);
 

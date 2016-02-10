@@ -20,7 +20,8 @@ module.exports = function(grunt) {
         CLIENT_DIR + "/app.js",
         CLIENT_DIR + "/common/*.js",
         CLIENT_DIR + "/dashboard/*.js",
-        CLIENT_DIR + "/ops/*.js"
+        CLIENT_DIR + "/ops/*.js",
+        CLIENT_DIR + "/priceAdmin/*js"
 
     ];
 

@@ -1,6 +1,7 @@
 'use strict';
 
 var request = require('request');
+var async = require("async");
 //require('request').debug = true;
 
 //var baseURl = 'https://public-crest.eveonline.com';
@@ -19,6 +20,7 @@ var crestMarketHitoryMorphite = 'https://public-crest.eveonline.com/market/10000
 
 exports.getSearchResults = function (req, res) {
     var allItems = [];
+    var errors = [];
     request.get(crestMarketHistoryTritanium , function (error, response, body) {
         if (!error && response.statusCode === 200) {
             res.type('application/json');
@@ -40,6 +42,7 @@ exports.getSearchResults = function (req, res) {
             allItems.push(topTritaniumBuy);
         } else {
             console.error(error);
+            errors.push(error);
         }
     });
     request.get(crestMarketHistoryPyerite , function (error, response, body) {
@@ -63,6 +66,7 @@ exports.getSearchResults = function (req, res) {
             allItems.push(topPyeriteBuy);
         } else {
             console.error(error);
+            errors.push(error);
         }
     });
     request.get(crestMarketHistoryMexallon , function (error, response, body) {
@@ -86,6 +90,7 @@ exports.getSearchResults = function (req, res) {
             allItems.push(topMexallonBuy);
         } else {
             console.error(error);
+            errors.push(error);
         }
     });
     request.get(crestMarketHistoryIsogen , function (error, response, body) {
@@ -109,6 +114,7 @@ exports.getSearchResults = function (req, res) {
             allItems.push(topIsogenBuy);
         } else {
             console.error(error);
+            errors.push(error);
         }
     });
     request.get(crestMarketHistoryNocxium , function (error, response, body) {
@@ -132,6 +138,7 @@ exports.getSearchResults = function (req, res) {
             allItems.push(topNocxiumBuy);
         } else {
             console.error(error);
+            errors.push(error);
         }
     });
     request.get(crestMarketHistoryZydrine , function (error, response, body) {
@@ -155,6 +162,7 @@ exports.getSearchResults = function (req, res) {
             allItems.push(topZydrineBuy);
         } else {
             console.error(error);
+            errors.push(error);
         }
     });
     request.get(crestMarketHistoryMegactye , function (error, response, body) {
@@ -178,6 +186,7 @@ exports.getSearchResults = function (req, res) {
             allItems.push(topMegactyeBuy);
         } else {
             console.error(error);
+            errors.push(error);
         }
     });
     request.get(crestMarketHitoryMorphite , function (error, response, body) {
@@ -201,8 +210,8 @@ exports.getSearchResults = function (req, res) {
             allItems.push(topMorphiteBuy);
         } else {
             console.error(error);
+            errors.push(error);
         }
     });
    // res.json(allItems);
-
 };

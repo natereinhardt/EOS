@@ -33,8 +33,8 @@
 
    app.config(function($mdThemingProvider) {
         $mdThemingProvider.theme('default')
-            .primaryPalette('blue-grey')
-            .accentPalette('orange');
+            .primaryPalette('deep-purple')
+            .accentPalette('deep-orange');
     });
 
 }(window.angular));

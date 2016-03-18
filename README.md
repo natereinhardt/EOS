@@ -32,7 +32,7 @@ These steps will download the required dependencies to run the app.
 - 2: run 'mongod'  in a new console to start up your mongo database
 - Finally: run 'node server' in a new console to start up the application
 
-Now travel to localhost:8080 in your browsers and BAM!:metal: It should be all up and running. :+1: 
+Now travel to localhost:3000 in your browsers and BAM!:metal: It should be all up and running. :+1: 
 
 
 

@@ -18,7 +18,7 @@
 
         function getPrices() {
             return $http.get('/api/crest/priceData').then(function (response){
-                vm.items.push(response.data);
+                vm.items = response.data;
             });
         }
 

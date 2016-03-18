@@ -116,14 +116,10 @@ function findMaxPrice(content){
 exports.getSearchResults = function (req, res) {
     var allItems = [];
     Promise.all([getTritanium(), getPyrite(), getMexallon(), getIsogen(), getNocxium(), getZydrine(), getMegactye(), getMorphite()]).then(function (response) {
-        allItems.push(response[0]);
-        allItems.push(response[1]);
-        allItems.push(response[2]);
-        allItems.push(response[3]);
-        allItems.push(response[4]);
-        allItems.push(response[5]);
-        allItems.push(response[6]);
-        allItems.push(response[7]);
+        var item;
+        for(item in response){
+            allItems.push(response[item]);
+        }
         res.type('application/json');
         res.json(allItems);
     });

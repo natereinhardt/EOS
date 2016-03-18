@@ -9,7 +9,7 @@ module.exports = function(app) {
     app.get('/api/ops', opsCtrl.list);
     app.post('/api/ops/:opName', opsCtrl.create);
 
-    app.route('/api/crest/priceData').get(eveCrest.getSearchResults);
+    app.route('/api/crest/priceData').get(eveCrest.getMarketData);
 
 
     // frontend routes =========================================================

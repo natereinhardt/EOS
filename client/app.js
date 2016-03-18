@@ -6,7 +6,8 @@
         'ngResource',
         'eos.topNavCtrl',
         'eos.opsCtrl',
-        'eos.dashboardCtrl'
+        'eos.dashboardCtrl',
+        'eos.priceAdmin'
         ]);
 
     app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider){
@@ -20,6 +21,11 @@
                 templateUrl: 'ops/ops.html',
                 pageName: 'Operations'
             });
+        $routeProvider.when(
+            '/priceAdmin', {
+                templateUrl: 'priceAdmin/priceAdmin.html',
+                pageName: 'Payout Price Admin Panel'
+            });
         $routeProvider.otherwise({redirectTo: '/'});
         $locationProvider.html5Mode(true);
 
@@ -27,8 +33,8 @@
 
    app.config(function($mdThemingProvider) {
         $mdThemingProvider.theme('default')
-            .primaryPalette('blue-grey')
-            .accentPalette('orange');
+            .primaryPalette('deep-purple')
+            .accentPalette('deep-orange');
     });
 
 }(window.angular));

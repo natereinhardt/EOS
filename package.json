@@ -7,10 +7,13 @@
     "angular-aria": "^1.4.4",
     "angular-material": "^0.10.1",
     "angular-route": "^1.4.4",
+    "async": "^1.5.2",
+    "bluebird": "^3.3.4",
     "body-parser": "^1.13.3",
     "express": "^4.13.3",
     "method-override": "~2.0.2",
-    "mongoose": "^4.1.2"
+    "mongoose": "^4.1.2",
+    "request": "^2.69.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

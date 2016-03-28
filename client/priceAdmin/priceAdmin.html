@@ -2,7 +2,9 @@
     <h1>There are {{vm.items.length}} items</h1>
     <ul>
         <li ng-repeat="item in vm.items">
-            {{item}}
+           <img src='{{item.itemImage}}'>
+            {{item.type.name}}
+            {{item.price | currency}}
         </li>
     </ul>
 </div>

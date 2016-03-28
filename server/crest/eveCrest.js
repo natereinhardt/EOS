@@ -6,7 +6,6 @@ var request = Promise.promisifyAll(require("request"), {multiArgs: true});
 
 var eveMarketCrestEndpoint = 'https://public-crest.eveonline.com/market/10000002/orders/buy/?type=https://public-crest.eveonline.com/types/';
 
-
 //Exposed Functions//
 exports.getMarketData = getMarketData;
 
@@ -15,11 +14,12 @@ exports.getMarketData = getMarketData;
 
 function getMarketData(req, res) {
     var allItems = [];
-    var itemIds = ['34', '35', '36', '37', '38', '39', '40','11399'];
+    var itemIds = ['34', '35', '36', '37', '38', '39', '40','11399', '29668'];
     var allItemPromises = retrieveItemPrices(itemIds);
 
     Promise.all(allItemPromises).then(function (response) {
         for(var item in response){
+            response[item].itemImage = 'http://imageserver.eveonline.com/Type/' + response[item].type.id + '_64.png';
             allItems.push(response[item]);
         }
         res.type('application/json');

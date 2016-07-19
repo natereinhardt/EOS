@@ -1,3 +1,16 @@
+**THIS PROJECT HAS BEEN MOVED**
+
+**https://github.com/natereinhardt/eve-operations-suite-api**
+
+and
+
+**https://github.com/natereinhardt/eve-operations-suite** 
+
+
+
+
+
+
 # EOS: Eve Operations Suite
 
 An app to mantain fleet operations within Eve Online.
